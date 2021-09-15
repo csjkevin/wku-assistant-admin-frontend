@@ -1,4 +1,4 @@
-import { UploadChangeParam, UploadFile } from 'antd/es/upload/interface';
+import type { UploadChangeParam, UploadFile } from 'antd/es/upload/interface';
 import React, { useState } from 'react';
 import XLSX from 'xlsx';
 import { UploadOutlined } from '@ant-design/icons';
@@ -14,8 +14,8 @@ const SpreadsheetPraser: React.FC<Props> = (props) => {
 
   const fileReader = new FileReader();
   fileReader.onload = (e) => {
-    const data = new Uint8Array(e?.target?.result as ArrayBuffer);
-    const workbook = XLSX.read(data, { type: 'array' });
+    const file = new Uint8Array(e?.target?.result as ArrayBuffer);
+    const workbook = XLSX.read(file, { type: 'array' });
     const sheets = workbook.Sheets;
     const sheet_keys = Object.keys(sheets);
     if (sheet_keys.length > 0) {
@@ -27,10 +27,10 @@ const SpreadsheetPraser: React.FC<Props> = (props) => {
   };
 
   const handleChange = (info: UploadChangeParam) => {
-    const fileList = info.fileList.slice(-1);
-    setFileList(fileList);
+    const list = info.fileList.slice(-1);
+    setFileList(list);
 
-    const file = fileList[0];
+    const file = list[0];
     if (
       file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' &&
       file.originFileObj
