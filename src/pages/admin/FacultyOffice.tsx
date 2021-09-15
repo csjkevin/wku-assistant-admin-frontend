@@ -15,7 +15,7 @@ interface FacultyInfo {
   email: string;
 }
 
-const ServiceIndex: React.FC = () => {
+const FacultyOffice: React.FC = () => {
   const [tableData, setTableData] = useState<FacultyInfo[]>([]);
 
   const handleChange = (data: TableEntry[]) => {
@@ -66,4 +66,4 @@ const ServiceIndex: React.FC = () => {
   );
 };
 
-export default ServiceIndex;
+export default FacultyOffice;
