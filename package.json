@@ -19,7 +19,6 @@
     "lint:prettier": "prettier -c --write \"src/**/*\" --end-of-line auto",
     "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
     "openapi": "umi openapi",
-    "precommit": "lint-staged",
     "prettier": "prettier -c --write \"src/**/*\"",
     "start": "cross-env UMI_ENV=dev umi dev",
     "start:dev": "cross-env REACT_APP_ENV=dev MOCK=none UMI_ENV=dev umi dev",
@@ -32,7 +31,8 @@
     "test:all": "node ./tests/run-tests.js",
     "test:component": "umi test ./src/components",
     "serve": "umi-serve",
-    "tsc": "tsc --noEmit"
+    "tsc": "tsc --noEmit",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "**/*.less": "stylelint --syntax less",
@@ -69,6 +69,8 @@
   },
   "devDependencies": {
     "@ant-design/pro-cli": "^2.0.2",
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
     "@types/express": "^4.17.0",
     "@types/history": "^4.7.2",
     "@types/jest": "^26.0.0",
@@ -76,7 +78,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-helmet": "^6.1.0",
-    "@umijs/fabric": "^2.6.2",
+    "@umijs/fabric": "^2.6.7",
     "@umijs/openapi": "^1.1.14",
     "@umijs/plugin-blocks": "^2.0.5",
     "@umijs/plugin-esbuild": "^1.0.1",
@@ -93,18 +95,16 @@
     "eslint": "^7.1.0",
     "express": "^4.17.1",
     "gh-pages": "^3.0.0",
+    "husky": "^7.0.2",
     "jsdom-global": "^3.0.2",
-    "lint-staged": "^10.0.0",
+    "lint-staged": "^10.5.4",
     "mockjs": "^1.0.1-beta3",
     "prettier": "^2.3.2",
     "puppeteer-core": "^8.0.0",
-    "stylelint": "^13.0.0",
+    "stylelint": "^13.13.1",
     "typescript": "^4.2.2"
   },
   "engines": {
     "node": ">=10.0.0"
-  },
-  "gitHooks": {
-    "commit-msg": "fabric verify-commit"
   }
 }
