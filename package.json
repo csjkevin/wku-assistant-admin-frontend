@@ -65,7 +65,7 @@
     "react-helmet-async": "^1.1.2",
     "umi": "^3.5.20",
     "umi-serve": "^1.9.10",
-    "uuidv4": "^6.2.12",
+    "uuid": "^8.3.2",
     "xlsx": "^0.17.2"
   },
   "devDependencies": {
