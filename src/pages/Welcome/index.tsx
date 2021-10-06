@@ -6,7 +6,7 @@ export default (): React.ReactNode => {
   return (
     <PageContainer>
       <Card>
-        <Alert message="欢迎来到一站式服务中心管理后台" type="success" showIcon banner />
+        <Alert message="欢迎来到 WKU 小助手管理后台" type="success" showIcon banner />
       </Card>
     </PageContainer>
   );
