@@ -10,21 +10,21 @@
   },
   {
     path: '/welcome',
-    name: '欢迎',
+    name: 'welcome',
     component: './Welcome',
   },
   {
     path: '/admin',
-    name: '一站式服务中心',
+    name: 'onestop',
     routes: [
       {
         path: '/admin/faculty_office',
-        name: '教授办公室',
+        name: 'facultyOffice',
         component: './admin/FacultyOffice',
       },
       {
         path: '/admin/service_index',
-        name: '学生服务索引',
+        name: 'serviceGuidance',
         component: './admin/ServiceIndex',
       },
     ],
