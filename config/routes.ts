@@ -11,11 +11,13 @@
   {
     path: '/welcome',
     name: 'welcome',
+    access: 'user',
     component: './Welcome',
   },
   {
     path: '/admin',
     name: 'onestop',
+    access: 'onestop',
     routes: [
       {
         path: '/admin/faculty_office',
